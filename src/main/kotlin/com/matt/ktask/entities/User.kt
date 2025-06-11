@@ -11,18 +11,18 @@ import java.util.UUID
 
 @Entity
 @Table(name = "users")
-class User {
+class User(
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    var id: UUID? = null
+    var id: UUID? = null,
 
     @Column(nullable = false, unique = true)
-    var nickname: String = ""
+    var nickname: String,
 
     @Email
     @Column(nullable = false, unique = true)
-    var email: String = ""
+    var email: String,
 
     @Column(nullable = false)
-    var password: String = ""
-}
+    var password: String
+)
